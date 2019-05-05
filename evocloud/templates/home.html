@@ -1,0 +1,22 @@
+<title>EvoCloud - home</title>
+{% extends "base.html" %}
+{% block content %}
+    <form method="POST" action="" enctype="multipart/form-data">
+        {{ form.hidden_tag() }}
+        <legend>Upload a file (size must be less than 3 MB)</legend>
+        <pre>
+{{ form.filename.label }}
+{{ form.filename }}
+
+{{ form.file.label }}
+{{ form.file }}
+
+{{ form.expiration.label}}
+{{ form.expiration }}
+        </pre>
+        {{ form.submit }}
+    </form>
+    <p>Allowed extensions are: txt, pdf, png, jpg, jpeg, gif.</p>
+    <p>Expiration time should be greater than 1.
+    <p>Be aware that expiration time will be rounded (XX:00)</p>
+{% endblock %}

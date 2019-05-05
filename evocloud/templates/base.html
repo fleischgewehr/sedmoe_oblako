@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>EvoCloud</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+<body>
+    <center>
+        <pre>
+_______ _    _  _____  _______         _____  _     _ ______
+|______  \  /  |     | |       |      |     | |     | |     \
+|______   \/   |_____| |_____  |_____ |_____| |_____| |_____/</pre>
+
+        {% if current_user.is_authenticated %}
+            ## [
+            <a href="{{ url_for('views.home') }}">{{ current_user.username }}@evo:/$ cd ~</a> &nbsp;&nbsp; // &nbsp;&nbsp;
+            <a href="{{ url_for('views.profile', username=current_user.username) }}"> profile</a> &nbsp;&nbsp; // &nbsp;&nbsp;
+            <a href="{{ url_for('views.logout') }}">logout</a>
+            ] ##
+        {% else %}
+            ## [
+            <a href="{{ url_for('views.home') }}">guest@evo:/$ cd ~</a> &nbsp;&nbsp; // &nbsp;&nbsp;
+            <a href="{{ url_for('views.login') }}">sign in</a>&nbsp;&nbsp; // &nbsp;&nbsp;
+            <a href="{{ url_for('views.register') }}">sign up</a>
+            ] ##
+        {% endif %}
+        <p>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</p>
+
+
+        {% block content %}{% endblock %}
+
+        <footer>
+            <p>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</p>
+            made by <a href="http://github.com/fleischgewehr">fleischgewehr</a> for evo python lab <3<br>
+            <i>1998-1843 (C)</i>
+        </footer>
+    </center>
+</body>
+</html>

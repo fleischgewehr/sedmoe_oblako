@@ -1,0 +1,18 @@
+<title>EvoCloud - sign in</title>
+{% extends "base.html" %}
+{% block content %}
+    <form method="POST" action="">
+        {{ form.hidden_tag() }}
+            <legend>Log in</legend>
+        <pre>
+{{ form.username.label }}
+{{ form.username }}
+
+{{ form.password.label }}
+{{ form.password }}
+
+{{ form.remember }}{{ form.remember.label }}
+        </pre>
+        {{ form.submit }}
+    </form>
+{% endblock %}
