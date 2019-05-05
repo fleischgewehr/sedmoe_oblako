@@ -24,7 +24,7 @@ To upload a file, go to home page and fill in all the fields with next requireme
 If you was not redirected to the new page after submitting a file,
  your input is invalid.
 
-![alt text](https://gifmaker.me/files/download/home/20190505/01/ryTSg8rI3ucg5pTEZj5GQ4/output_EX24Jr.gif)
+![alt text](https://github.com/fleischgewehr/sedmoe_oblako/blob/master/demo.gif?raw=true)
 
 You can use this app either authorized or not. Logged users can check their files
 at profile section. If file has no owner, it will be lost forever in case if
