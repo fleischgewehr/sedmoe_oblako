@@ -15,8 +15,5 @@ bcrypt = Bcrypt(app)
 login_manager = LoginManager(app)
 login_manager.login_view = 'views.login'
 
-# run scheduler
-import evocloud.jobs
-
 from evocloud.views import routes
 app.register_blueprint(routes)

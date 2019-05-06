@@ -1,7 +1,7 @@
 <title>EvoCloud - profile</title>
 {% extends "base.html" %}
 {% block content %}
-    <h2>Hello, {{ user.username }}!</h2> <legend>Here are your files:</legend>
+    <h2>{{ user.username }}'s profile.</h2> <legend>Files:</legend>
     <div>
         {% for file in files.items %}
         - <a href="{{ url_for('views.filepage', hash=file.hash) }}">{{ file.file }}</a><br>

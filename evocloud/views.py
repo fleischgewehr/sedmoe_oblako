@@ -19,7 +19,8 @@ routes = Blueprint('views', __name__)
 def home():
     form = FileForm()
     if form.validate_on_submit():
-        # save file to storage
+        # save file to storage (as heroku doesn't allow to do this,
+        # this operation will have no result
         instance = request.files['file']
         name = secure_filename(form.filename.data +
                                get_extension(instance.filename))
@@ -95,10 +96,10 @@ def logout():
 
 @routes.route('/user/<string:username>')
 def profile(username):
-    page = request.args.get('page', 1, type=int)
-    user = User.query.filter_by(username=username).first_or_404()
-    files = File.query.filter_by(owner=user).paginate(page=page, per_page=5)
-    return render_template('profile.html', files=files, user=user)
+        user = User.query.filter_by(username=username).first_or_404()
+        page = request.args.get('page', 1, type=int)
+        files = File.query.filter_by(owner=user).paginate(page=page, per_page=5)
+        return render_template('profile.html', files=files, user=user)
 
 
 @routes.errorhandler(403)
